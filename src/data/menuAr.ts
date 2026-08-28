@@ -1,0 +1,140 @@
+import type { MenuCategory } from '../types/menu'
+
+/**
+ * Version arabe de la carte. Même structure, mêmes prix et mêmes identifiants
+ * que `menu.ts` — seul le texte change, pour permettre la bascule FR / AR.
+ */
+export const menuAr: MenuCategory[] = [
+  {
+    id: 'entrees',
+    label: 'المقبّلات',
+    note: 'مزّات للمشاركة، تُقدَّم طازجة',
+    variant: 'simple',
+    items: [
+      { name: 'حمّص', price: 6, description: 'حمّص بالطحينة والليمون وزيت الزيتون.' },
+      { name: 'ثومية', price: 5, description: 'كريمة ثوم غنية وطريّة.' },
+      { name: 'بابا غنوج', price: 6, description: 'متبّل باذنجان مدخّن بالطحينة.' },
+      { name: 'سلطة فتّوش', price: 6, description: 'خضار مقرمشة، سمّاق وخبز محمّص.' },
+      { name: 'فلافل', price: 6, description: '8 قطع ذهبية ومقرمشة.' },
+      { name: 'كبّة', price: 4 },
+      { name: 'سمبوسك', price: 7, description: 'عجينة مورّقة بحشوة البيت.' },
+      { name: 'تبّولة', price: 5, description: 'بقدونس، برغل، بندورة وليمون.' },
+      { name: 'سلطة كول سلو', price: 6 },
+      { name: 'شوربة عدس', price: 3, description: 'عدس أحمر، كمّون وليمون.' },
+      { name: 'بطاطا مقلية', price: 4 },
+    ],
+  },
+  {
+    id: 'sandwichs',
+    label: 'سندويشات',
+    note: 'ملفوفة سريعاً بالخبز اللبناني — عادي، جبنة، بيض أو الاثنين',
+    variant: 'sandwich',
+    items: [
+      { name: 'فلافل', nature: 7, fromage: 9, oeuf: 7.5, oeufFromage: 9.5 },
+      { name: 'شاورما دجاج', nature: 10, fromage: 12, oeuf: 10.5, oeufFromage: 12.5 },
+      { name: 'شيش طاووق', nature: 10, fromage: 12, oeuf: 10.5, oeufFromage: 12.5 },
+      { name: 'كبد دجاج', nature: 10, fromage: 12, oeuf: 10.5, oeufFromage: 12.5 },
+      { name: 'كفتة دجاج', nature: 10, fromage: 12, oeuf: 10.5, oeufFromage: 12.5 },
+      { name: 'دجاج كرسبي', nature: 10, fromage: 12, oeuf: 10.5, oeufFromage: 12.5 },
+      { name: 'كفتة لحمة', nature: 12.5, fromage: 14.5, oeuf: 13, oeufFromage: 15, popular: true },
+      { name: 'شاورما لحمة', nature: 15, fromage: 17, oeuf: 15.5, oeufFromage: 17.5 },
+    ],
+  },
+  {
+    id: 'plats',
+    label: 'الأطباق',
+    note: 'طبق كامل، يُقدَّم مع الإضافات',
+    variant: 'simple',
+    items: [
+      { name: 'طبق فلافل', price: 17 },
+      { name: 'إسكالوب مشوي', price: 23 },
+      { name: 'شاورما دجاج', price: 23 },
+      {
+        name: 'شيش طاووق',
+        price: 23,
+        popular: true,
+        description: 'أسياخ دجاج متبّلة، مشوية على الحطب.',
+      },
+      { name: 'كبد دجاج', price: 23 },
+      { name: 'كفتة دجاج', price: 23 },
+      { name: 'دجاج كرسبي', price: 24 },
+      { name: 'كفتة لحمة', price: 26.5 },
+      {
+        name: 'شاورما لحمة',
+        price: 28,
+        popular: true,
+        description: 'لحمة متبّلة، تُقطَّع طازجة.',
+      },
+      { name: 'طبق رياضي', price: 14, description: 'نسخة خفيفة وغنية بالبروتين.' },
+    ],
+  },
+  {
+    id: 'mixtes',
+    label: 'أطباق مشكّلة',
+    note: 'للمشاركة بين عدة أشخاص',
+    variant: 'simple',
+    items: [
+      { name: 'مشكّل نوعان من الدجاج', price: 35 },
+      { name: 'مشكّل دجاج + لحمة', price: 39 },
+      { name: 'مشكّل نوعان من اللحمة', price: 44 },
+      {
+        name: 'طبق كرم لبنان المشكّل',
+        price: 74,
+        description: 'الصحن الكبير للبيت، لكل الطاولة.',
+      },
+    ],
+  },
+  {
+    id: 'bowls',
+    label: 'بولات كرسبي',
+    note: 'أرز، فلافل، بطاطا ودجاج كرسبي — ركّب صندوقك',
+    variant: 'simple',
+    items: [
+      { name: 'صندوق خياران', price: 12.5 },
+      { name: 'صندوق 3 خيارات', price: 16 },
+      { name: 'صندوق 4 خيارات', price: 19 },
+    ],
+  },
+  {
+    id: 'poulet',
+    label: 'دجاج كامل',
+    note: 'مشوي، للأخذ — لوحده أو مع الإضافات',
+    variant: 'poulet',
+    items: [
+      { name: 'نصف دجاجة', sansGarniture: 11, avecGarniture: 19 },
+      { name: 'دجاجة كاملة', sansGarniture: 18, avecGarniture: 28 },
+    ],
+  },
+  {
+    id: 'supplements',
+    label: 'الإضافات',
+    note: 'لإضافتها إلى طلبك',
+    variant: 'simple',
+    items: [
+      { name: 'شاورما دجاج', price: 5.5 },
+      { name: 'كفتة دجاج', price: 5.5 },
+      { name: 'كبد دجاج', price: 5.5 },
+      { name: 'شيش طاووق', price: 5.5 },
+      { name: 'دجاج كرسبي', price: 6.5 },
+      { name: 'كفتة لحمة', price: 7 },
+      { name: 'شاورما لحمة', price: 7.8 },
+      { name: 'بطاطا مقلية', price: 3 },
+      { name: 'أرز', price: 5 },
+      { name: 'بيض', price: 0.7 },
+      { name: 'موزاريلا', price: 3 },
+      { name: 'غرويير', price: 3 },
+      { name: 'شيدر', price: 3 },
+    ],
+  },
+  {
+    id: 'boissons',
+    label: 'المشروبات',
+    variant: 'simple',
+    items: [
+      { name: 'ماء ½ لتر', price: 1 },
+      { name: 'ماء 1 لتر', price: 2.5 },
+      { name: 'مشروب غازي', price: 2.5 },
+      { name: 'لبن عيران', price: 2.5, description: 'لبن مالح منعش.' },
+    ],
+  },
+]

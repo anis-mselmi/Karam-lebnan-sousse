@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-sans text-white antialiased;
+    /* Champ chaud : rouge profond (haut) → flamme plus claire (bas), fixé. */
+    background: linear-gradient(165deg, #7c0f16 0%, #b3161f 38%, #d83a24 78%, #e8632b 100%);
+    background-attachment: fixed;
+    background-color: #b3161f;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-extrabold;
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: theme('colors.or.DEFAULT');
+    color: theme('colors.rouge.dark');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.or.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .u-container {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section-pad {
+    @apply py-14 sm:py-20;
+  }
+
+  /* Eyebrow : script, italique, court — au-dessus des titres. */
+  .eyebrow-script {
+    @apply block font-script text-3xl font-bold italic text-or-light;
+  }
+
+  /* Panneau de contenu blanc (grille produit), plat. */
+  .panel {
+    @apply rounded-6xl bg-white text-ink;
+  }
+
+  /* Boutons : pilule, accent vif, texte foncé, sans ombre ni bordure. */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[0.95rem] font-bold
+      transition-colors duration-200;
+  }
+
+  .btn-gold {
+    @apply btn bg-or text-rouge-dark hover:bg-or-light;
+  }
+
+  .btn-white {
+    @apply btn bg-white text-rouge hover:bg-canvas;
+  }
+
+  .btn-quiet {
+    @apply btn bg-ink/[0.06] text-ink hover:bg-ink/[0.1];
+  }
+}
+
+/* Version arabe : police Amiri pour un rendu lisible, et eyebrow non italique. */
+html[lang='ar'] body,
+html[lang='ar'] .font-display,
+html[lang='ar'] .font-sans,
+html[lang='ar'] .font-script,
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3,
+html[lang='ar'] h4,
+html[lang='ar'] .eyebrow-script {
+  font-family: 'Amiri', 'Poppins', serif !important;
+}
+
+html[lang='ar'] .eyebrow-script {
+  font-style: normal;
+}
