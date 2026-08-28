@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-sans text-white antialiased;
+    /* Champ chaud continu (façon AlBaik), fixé au viewport pour rester constant. */
+    background:
+      radial-gradient(90% 50% at 50% 0%, rgba(240, 180, 41, 0.18), transparent 55%),
+      linear-gradient(180deg, #d21f28 0%, #b3161f 45%, #8c1219 100%);
+    background-attachment: fixed;
+    background-color: #b3161f;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: #fff;
+    color: theme('colors.rouge.DEFAULT');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.or.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .u-container {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Espacement de section homogène. */
+  .section-pad {
+    @apply py-16 sm:py-24;
+  }
+
+  /* Panneau de contenu blanc, arrondi et flottant (identique partout). */
+  .panel {
+    @apply rounded-6xl bg-white text-ink shadow-float;
+  }
+
+  /* Eyebrow en script doré, centré. */
+  .eyebrow-script {
+    @apply block text-center font-script text-3xl font-bold text-or-light;
+  }
+
+  /* Boutons — cohérents sur le champ rouge. */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[0.95rem] font-bold
+      transition-[background-color,color,box-shadow] duration-200;
+  }
+
+  .btn-gold {
+    @apply btn bg-or text-rouge-dark shadow-chip hover:bg-or-light;
+  }
+
+  .btn-white {
+    @apply btn bg-white text-rouge shadow-chip hover:bg-canvas;
+  }
+
+  .btn-outline-white {
+    @apply btn border border-white/35 text-white hover:bg-white/15;
+  }
+
+  /* Bouton compact à l'intérieur d'un panneau blanc. */
+  .btn-quiet {
+    @apply btn bg-ink/[0.06] text-ink hover:bg-ink/[0.1];
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: #fff;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+}
