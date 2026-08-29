@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { MotionConfig } from 'motion/react'
 import { LanguageProvider } from './i18n/LanguageContext'
 import { useT } from './i18n/strings'
@@ -8,25 +9,46 @@ import { Hero } from './components/sections/Hero'
 import { PlatBand } from './components/sections/PlatBand'
 import { About } from './components/sections/About'
 import { Menu } from './components/sections/Menu'
+import { CartePage } from './components/sections/CartePage'
+
+/** Route active, dérivée du hash (#/carte ouvre la carte complète). */
+function useHashRoute() {
+  const read = () => window.location.hash.replace(/^#/, '')
+  const [route, setRoute] = useState(read)
+  useEffect(() => {
+    const onChange = () => setRoute(read())
+    window.addEventListener('hashchange', onChange)
+    return () => window.removeEventListener('hashchange', onChange)
+  }, [])
+  return route
+}
 
 export default function App() {
+  const route = useHashRoute()
+
   return (
     <LanguageProvider>
       <MotionConfig reducedMotion="user">
-        <SkipLink />
+        {route === '/carte' ? (
+          <CartePage />
+        ) : (
+          <>
+            <SkipLink />
 
-        <Navbar />
+            <Navbar />
 
-        <main>
-          <Hero />
-          <PlatBand />
-          <About />
-          <Menu />
-        </main>
+            <main>
+              <Hero />
+              <PlatBand />
+              <About />
+              <Menu />
+            </main>
 
-        <Footer />
+            <Footer />
 
-        <FloatingActions />
+            <FloatingActions />
+          </>
+        )}
       </MotionConfig>
     </LanguageProvider>
   )

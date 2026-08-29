@@ -43,6 +43,7 @@ export const strings = {
       eyebrow: 'Notre carte',
       title: 'Le menu, du mezzé au grand plateau.',
       description: 'Un aperçu en images, puis toute la carte et les prix, en dinars tunisiens.',
+      viewMenu: 'Voir toute la carte',
       orderGlovo: 'Commander sur Glovo',
       priceEyebrow: 'À la carte',
       priceTitle: 'Tous nos plats & prix',
@@ -59,6 +60,12 @@ export const strings = {
         sansGarniture: 'Sans garniture',
         avecGarniture: 'Avec garniture',
       },
+    },
+    carte: {
+      back: 'Retour',
+      eyebrow: 'La carte complète',
+      title: 'Tous nos plats & prix',
+      sub: 'En dinars tunisiens. Les incontournables sont signalés d’un badge.',
     },
     footer: {
       invite: 'Une envie de mezzés ou d’un grand plateau ? Appelez-nous, on s’occupe du reste.',
@@ -122,6 +129,7 @@ export const strings = {
       eyebrow: 'قائمتنا',
       title: 'من المقبّلات إلى الصحن الكبير.',
       description: 'لمحة بالصور، ثم القائمة كاملة والأسعار بالدينار التونسي.',
+      viewMenu: 'عرض القائمة كاملة',
       orderGlovo: 'اطلب عبر Glovo',
       priceEyebrow: 'قائمة الأسعار',
       priceTitle: 'كل أطباقنا وأسعارنا',
@@ -138,6 +146,12 @@ export const strings = {
         sansGarniture: 'بدون إضافات',
         avecGarniture: 'مع إضافات',
       },
+    },
+    carte: {
+      back: 'رجوع',
+      eyebrow: 'القائمة كاملة',
+      title: 'كل أطباقنا وأسعارنا',
+      sub: 'بالدينار التونسي. الأطباق المميّزة معلَّمة بشارة.',
     },
     footer: {
       invite: 'تشتهي مزّات أو صحناً كبيراً؟ اتصل بنا ونحن نتكفّل بالباقي.',

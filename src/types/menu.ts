@@ -13,6 +13,8 @@ export interface SimpleItem {
   description?: string
   /** Met en avant l'article avec un badge « Populaire ». */
   popular?: boolean
+  /** Photo du plat. */
+  image?: string
 }
 
 /** Sandwich décliné en quatre garnitures. */
@@ -23,6 +25,8 @@ export interface SandwichItem {
   oeuf: number
   oeufFromage: number
   popular?: boolean
+  /** Photo du sandwich. */
+  image?: string
 }
 
 /** Poulet entier, avec ou sans garniture. */
@@ -30,6 +34,8 @@ export interface PouletItem {
   name: string
   sansGarniture: number
   avecGarniture: number
+  /** Photo du plat. */
+  image?: string
 }
 
 export type MenuVariant = 'simple' | 'sandwich' | 'poulet'
